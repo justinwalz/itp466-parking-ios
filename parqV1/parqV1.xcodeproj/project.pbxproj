@@ -26,7 +26,7 @@
 		7EAA3EE218597AB1002DB255 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EE118597AB1002DB255 /* CoreLocation.framework */; };
 		7EAA3EE418597ABE002DB255 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EE318597ABE002DB255 /* MapKit.framework */; };
 		7EAA3EE918597CCA002DB255 /* DJ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EE818597CCA002DB255 /* DJ.jpg */; };
-		7EAA3F0618599B08002DB255 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3F0518599B08002DB255 /* AppDelegate.m */; };
+		7EAA3F0918599B6C002DB255 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3F0818599B6C002DB255 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		7EAA3EE118597AB1002DB255 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7EAA3EE318597ABE002DB255 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7EAA3EE818597CCA002DB255 /* DJ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DJ.jpg; sourceTree = "<group>"; };
-		7EAA3F0418599B08002DB255 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7EAA3F0518599B08002DB255 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7EAA3F0718599B6C002DB255 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7EAA3F0818599B6C002DB255 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +130,8 @@
 		7EAA3EAB185978EB002DB255 /* parqV1 */ = {
 			isa = PBXGroup;
 			children = (
-				7EAA3F0418599B08002DB255 /* AppDelegate.h */,
-				7EAA3F0518599B08002DB255 /* AppDelegate.m */,
+				7EAA3F0718599B6C002DB255 /* AppDelegate.h */,
+				7EAA3F0818599B6C002DB255 /* AppDelegate.m */,
 				7EAA3EDB18597A50002DB255 /* MapViewController.h */,
 				7EAA3EDC18597A50002DB255 /* MapViewController.m */,
 				7EAA3EDD18597A50002DB255 /* MapViewController.xib */,
@@ -278,7 +278,7 @@
 				7EAA3EDF18597A50002DB255 /* MapViewController.m in Sources */,
 				7EAA3ED7185979D6002DB255 /* AddParkingSpotController.m in Sources */,
 				7EAA3EB2185978EB002DB255 /* main.m in Sources */,
-				7EAA3F0618599B08002DB255 /* AppDelegate.m in Sources */,
+				7EAA3F0918599B6C002DB255 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
