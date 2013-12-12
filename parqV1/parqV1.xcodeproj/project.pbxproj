@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EAA3EA6185978EB002DB255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA5185978EB002DB255 /* Foundation.framework */; };
+		7EAA3EA8185978EB002DB255 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */; };
+		7EAA3EAA185978EB002DB255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA9185978EB002DB255 /* UIKit.framework */; };
+		7EAA3EB0185978EB002DB255 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EAE185978EB002DB255 /* InfoPlist.strings */; };
+		7EAA3EB2185978EB002DB255 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3EB1185978EB002DB255 /* main.m */; };
+		7EAA3EB8185978EB002DB255 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EB7185978EB002DB255 /* Images.xcassets */; };
+		7EAA3EBF185978EB002DB255 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EBE185978EB002DB255 /* XCTest.framework */; };
+		7EAA3EC0185978EB002DB255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA5185978EB002DB255 /* Foundation.framework */; };
+		7EAA3EC1185978EB002DB255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA9185978EB002DB255 /* UIKit.framework */; };
+		7EAA3EC9185978EB002DB255 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EC7185978EB002DB255 /* InfoPlist.strings */; };
+		7EAA3ECB185978EB002DB255 /* parqV1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3ECA185978EB002DB255 /* parqV1Tests.m */; };
+		7EAA3ED7185979D6002DB255 /* AddParkingSpotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3ED5185979D6002DB255 /* AddParkingSpotController.m */; };
+		7EAA3ED8185979D6002DB255 /* AddParkingSpotController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3ED6185979D6002DB255 /* AddParkingSpotController.xib */; };
+		7EAA3EDE18597A50002DB255 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3EDA18597A50002DB255 /* MapPin.m */; };
+		7EAA3EDF18597A50002DB255 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3EDC18597A50002DB255 /* MapViewController.m */; };
+		7EAA3EE018597A50002DB255 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EDD18597A50002DB255 /* MapViewController.xib */; };
+		7EAA3EE218597AB1002DB255 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EE118597AB1002DB255 /* CoreLocation.framework */; };
+		7EAA3EE418597ABE002DB255 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EE318597ABE002DB255 /* MapKit.framework */; };
+		7EAA3EE718597BC1002DB255 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3EE618597BC1002DB255 /* AppDelegate.m */; };
+		7EAA3EE918597CCA002DB255 /* DJ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3EE818597CCA002DB255 /* DJ.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EAA3EC2185978EB002DB255 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAA3E9A185978EA002DB255 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EAA3EA1185978EB002DB255;
+			remoteInfo = parqV1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7EAA3EA2185978EB002DB255 /* parqV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parqV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAA3EA5185978EB002DB255 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7EAA3EA9185978EB002DB255 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7EAA3EAD185978EB002DB255 /* parqV1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parqV1-Info.plist"; sourceTree = "<group>"; };
+		7EAA3EAF185978EB002DB255 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EAA3EB1185978EB002DB255 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7EAA3EB3185978EB002DB255 /* parqV1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "parqV1-Prefix.pch"; sourceTree = "<group>"; };
+		7EAA3EB7185978EB002DB255 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7EAA3EBD185978EB002DB255 /* parqV1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = parqV1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAA3EBE185978EB002DB255 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7EAA3EC6185978EB002DB255 /* parqV1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "parqV1Tests-Info.plist"; sourceTree = "<group>"; };
+		7EAA3EC8185978EB002DB255 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EAA3ECA185978EB002DB255 /* parqV1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parqV1Tests.m; sourceTree = "<group>"; };
+		7EAA3ED4185979D6002DB255 /* AddParkingSpotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddParkingSpotController.h; sourceTree = "<group>"; };
+		7EAA3ED5185979D6002DB255 /* AddParkingSpotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddParkingSpotController.m; sourceTree = "<group>"; };
+		7EAA3ED6185979D6002DB255 /* AddParkingSpotController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddParkingSpotController.xib; sourceTree = "<group>"; };
+		7EAA3ED918597A3E002DB255 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		7EAA3EDA18597A50002DB255 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		7EAA3EDB18597A50002DB255 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7EAA3EDC18597A50002DB255 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		7EAA3EDD18597A50002DB255 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		7EAA3EE118597AB1002DB255 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7EAA3EE318597ABE002DB255 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7EAA3EE518597BC1002DB255 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../../parq/AppDelegate.h; sourceTree = "<group>"; };
+		7EAA3EE618597BC1002DB255 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../../parq/AppDelegate.m; sourceTree = "<group>"; };
+		7EAA3EE818597CCA002DB255 /* DJ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DJ.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EAA3E9F185978EB002DB255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3EE418597ABE002DB255 /* MapKit.framework in Frameworks */,
+				7EAA3EE218597AB1002DB255 /* CoreLocation.framework in Frameworks */,
+				7EAA3EA8185978EB002DB255 /* CoreGraphics.framework in Frameworks */,
+				7EAA3EAA185978EB002DB255 /* UIKit.framework in Frameworks */,
+				7EAA3EA6185978EB002DB255 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA3EBA185978EB002DB255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3EBF185978EB002DB255 /* XCTest.framework in Frameworks */,
+				7EAA3EC1185978EB002DB255 /* UIKit.framework in Frameworks */,
+				7EAA3EC0185978EB002DB255 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EAA3E99185978EA002DB255 = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EAB185978EB002DB255 /* parqV1 */,
+				7EAA3EC4185978EB002DB255 /* parqV1Tests */,
+				7EAA3EA4185978EB002DB255 /* Frameworks */,
+				7EAA3EA3185978EB002DB255 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7EAA3EA3185978EB002DB255 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EA2185978EB002DB255 /* parqV1.app */,
+				7EAA3EBD185978EB002DB255 /* parqV1Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAA3EA4185978EB002DB255 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EE318597ABE002DB255 /* MapKit.framework */,
+				7EAA3EE118597AB1002DB255 /* CoreLocation.framework */,
+				7EAA3EA5185978EB002DB255 /* Foundation.framework */,
+				7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */,
+				7EAA3EA9185978EB002DB255 /* UIKit.framework */,
+				7EAA3EBE185978EB002DB255 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EAA3EAB185978EB002DB255 /* parqV1 */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EE518597BC1002DB255 /* AppDelegate.h */,
+				7EAA3EE618597BC1002DB255 /* AppDelegate.m */,
+				7EAA3EDB18597A50002DB255 /* MapViewController.h */,
+				7EAA3EDC18597A50002DB255 /* MapViewController.m */,
+				7EAA3EDD18597A50002DB255 /* MapViewController.xib */,
+				7EAA3ED918597A3E002DB255 /* MapPin.h */,
+				7EAA3EDA18597A50002DB255 /* MapPin.m */,
+				7EAA3ED4185979D6002DB255 /* AddParkingSpotController.h */,
+				7EAA3ED5185979D6002DB255 /* AddParkingSpotController.m */,
+				7EAA3ED6185979D6002DB255 /* AddParkingSpotController.xib */,
+				7EAA3EB7185978EB002DB255 /* Images.xcassets */,
+				7EAA3EE818597CCA002DB255 /* DJ.jpg */,
+				7EAA3EAC185978EB002DB255 /* Supporting Files */,
+			);
+			path = parqV1;
+			sourceTree = "<group>";
+		};
+		7EAA3EAC185978EB002DB255 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EAD185978EB002DB255 /* parqV1-Info.plist */,
+				7EAA3EAE185978EB002DB255 /* InfoPlist.strings */,
+				7EAA3EB1185978EB002DB255 /* main.m */,
+				7EAA3EB3185978EB002DB255 /* parqV1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EAA3EC4185978EB002DB255 /* parqV1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3ECA185978EB002DB255 /* parqV1Tests.m */,
+				7EAA3EC5185978EB002DB255 /* Supporting Files */,
+			);
+			path = parqV1Tests;
+			sourceTree = "<group>";
+		};
+		7EAA3EC5185978EB002DB255 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EC6185978EB002DB255 /* parqV1Tests-Info.plist */,
+				7EAA3EC7185978EB002DB255 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EAA3EA1185978EB002DB255 /* parqV1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAA3ECE185978EB002DB255 /* Build configuration list for PBXNativeTarget "parqV1" */;
+			buildPhases = (
+				7EAA3E9E185978EB002DB255 /* Sources */,
+				7EAA3E9F185978EB002DB255 /* Frameworks */,
+				7EAA3EA0185978EB002DB255 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = parqV1;
+			productName = parqV1;
+			productReference = 7EAA3EA2185978EB002DB255 /* parqV1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EAA3EBC185978EB002DB255 /* parqV1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAA3ED1185978EB002DB255 /* Build configuration list for PBXNativeTarget "parqV1Tests" */;
+			buildPhases = (
+				7EAA3EB9185978EB002DB255 /* Sources */,
+				7EAA3EBA185978EB002DB255 /* Frameworks */,
+				7EAA3EBB185978EB002DB255 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EAA3EC3185978EB002DB255 /* PBXTargetDependency */,
+			);
+			name = parqV1Tests;
+			productName = parqV1Tests;
+			productReference = 7EAA3EBD185978EB002DB255 /* parqV1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EAA3E9A185978EA002DB255 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Duncan Riefler";
+				TargetAttributes = {
+					7EAA3EBC185978EB002DB255 = {
+						TestTargetID = 7EAA3EA1185978EB002DB255;
+					};
+				};
+			};
+			buildConfigurationList = 7EAA3E9D185978EA002DB255 /* Build configuration list for PBXProject "parqV1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7EAA3E99185978EA002DB255;
+			productRefGroup = 7EAA3EA3185978EB002DB255 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EAA3EA1185978EB002DB255 /* parqV1 */,
+				7EAA3EBC185978EB002DB255 /* parqV1Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EAA3EA0185978EB002DB255 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3EE918597CCA002DB255 /* DJ.jpg in Resources */,
+				7EAA3ED8185979D6002DB255 /* AddParkingSpotController.xib in Resources */,
+				7EAA3EB0185978EB002DB255 /* InfoPlist.strings in Resources */,
+				7EAA3EB8185978EB002DB255 /* Images.xcassets in Resources */,
+				7EAA3EE018597A50002DB255 /* MapViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA3EBB185978EB002DB255 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3EC9185978EB002DB255 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EAA3E9E185978EB002DB255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3EDE18597A50002DB255 /* MapPin.m in Sources */,
+				7EAA3EE718597BC1002DB255 /* AppDelegate.m in Sources */,
+				7EAA3EDF18597A50002DB255 /* MapViewController.m in Sources */,
+				7EAA3ED7185979D6002DB255 /* AddParkingSpotController.m in Sources */,
+				7EAA3EB2185978EB002DB255 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA3EB9185978EB002DB255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA3ECB185978EB002DB255 /* parqV1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EAA3EC3185978EB002DB255 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EAA3EA1185978EB002DB255 /* parqV1 */;
+			targetProxy = 7EAA3EC2185978EB002DB255 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7EAA3EAE185978EB002DB255 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAA3EAF185978EB002DB255 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7EAA3EC7185978EB002DB255 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAA3EC8185978EB002DB255 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EAA3ECC185978EB002DB255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7EAA3ECD185978EB002DB255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7EAA3ECF185978EB002DB255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
+				INFOPLIST_FILE = "parqV1/parqV1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EAA3ED0185978EB002DB255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
+				INFOPLIST_FILE = "parqV1/parqV1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7EAA3ED2185978EB002DB255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/parqV1.app/parqV1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "parqV1Tests/parqV1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7EAA3ED3185978EB002DB255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/parqV1.app/parqV1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
+				INFOPLIST_FILE = "parqV1Tests/parqV1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EAA3E9D185978EA002DB255 /* Build configuration list for PBXProject "parqV1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA3ECC185978EB002DB255 /* Debug */,
+				7EAA3ECD185978EB002DB255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EAA3ECE185978EB002DB255 /* Build configuration list for PBXNativeTarget "parqV1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA3ECF185978EB002DB255 /* Debug */,
+				7EAA3ED0185978EB002DB255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7EAA3ED1185978EB002DB255 /* Build configuration list for PBXNativeTarget "parqV1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA3ED2185978EB002DB255 /* Debug */,
+				7EAA3ED3185978EB002DB255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EAA3E9A185978EA002DB255 /* Project object */;
+}
