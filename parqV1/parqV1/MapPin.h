@@ -23,7 +23,9 @@
 }
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-@property (nonatomic, readonly) NSString * title;
+@property (nonatomic, readonly, copy) NSString * title;
+@property (nonatomic, readonly, copy) NSString * subtitle;
+
 - (id)initWithLocation: (CLPlacemark*) loc andRating: (int)rating andRate: (float) rate andStartTime: (int) strt andEndTime: (int) end;
 
 - (id)initWithCoord: (CLLocationCoordinate2D) coord andRating: (int)rating andRate: (float) rate andStartTime: (int) strt andEndTime: (int) end;

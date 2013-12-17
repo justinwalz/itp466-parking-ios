@@ -36,6 +36,7 @@
         _endHour = end;
         coordinate = coord;
         title = @"Goku's house";
+        _subtitle = [NSString stringWithFormat:@"%d - %d, $%f", strt, end,rate];
     }
     return self;
 }
