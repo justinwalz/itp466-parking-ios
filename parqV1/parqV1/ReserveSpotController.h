@@ -15,6 +15,8 @@ typedef enum {None,Start,End} DatePickerState;
 {
     DatePickerState datePickerState;
 }
+@property NSDictionary * user;
+
 // Top Part
 @property (weak, nonatomic) IBOutlet UIImageView *ProfPic;
 @property (weak, nonatomic) IBOutlet UIImageView *parkingSpotView;
@@ -34,8 +36,7 @@ typedef enum {None,Start,End} DatePickerState;
 @property (weak, nonatomic) IBOutlet UIButton *startTime;
 @property (weak, nonatomic) IBOutlet UIButton *endTime;
 
-- (id) initWithMapView: (MKMapView *) currentMapView;
-
+- (id) initWithMapView: (MKMapView *) currentMapView andUser: (NSDictionary *) usr;
 
 // ------ TOP SECTION ------//
 // User Name

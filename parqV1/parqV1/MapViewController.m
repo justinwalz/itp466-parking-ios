@@ -32,51 +32,11 @@
         // And we want it to be as accurate as possible regardless of how much time/power it takes
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
-        [self setUpNavBar];
+        // Set to false to make sure that we zoom to users location when the view is loaded
         atUserLocation = false;
     }
     return self;
 }
-
-- (void)setUpNavBar
-{
-
-}
-
-- (void)loadAddParkingSpotView
-{
-    // Pushes the next view where you can add a parking spot (button on top right)
-    AddParkingSpotController *apsc = [[AddParkingSpotController alloc] initWithNibName:@"AddParkingSpotController" bundle:nil];
-    [[self navigationController] pushViewController:apsc animated:YES];
-}
-
-- (IBAction)showUserLocation:(id)sender
-{
-    
-    [self zoomToUserLocation:self.worldView.userLocation];
-}
-
-- (IBAction)findParking:(id)sender
-{
-    // Request parking spot data
-    dispatch_async(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL:
-                        kLatestParkingSpotsURL];
-        if (data != nil) {
-            [self performSelectorOnMainThread:@selector(fetchedData:)
-                               withObject:data waitUntilDone:YES];
-        }
-    });
-    
-    // HACK to put pins on map
-//    MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake((double)34.1205,(double)-118.2856)
-//                                       andRating:5
-//                                         andRate:0.5
-//                                    andStartTime:2
-//                                      andEndTime:8];
-//    [worldView addAnnotation:pin];
-}
-
 
 - (void)viewDidLoad
 {
@@ -120,8 +80,8 @@
     // Add corner radius
     self.findParkingButton.layer.cornerRadius = 4.0f;
     self.findParkingButton.layer.masksToBounds = NO;
-
-    // Create the colors
+    
+    // Create colors for a gradient
     UIColor *color1 =
     [UIColor colorWithRed:(float)62/255 green:(float)177/255 blue:(float)213/255 alpha:1.0];
     UIColor *color2 =
@@ -157,7 +117,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:background];
     [_bottomView addSubview:imageView];
     [_bottomView sendSubviewToBack:imageView ];
-
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -167,11 +127,10 @@
 }
 
 - (void)fetchedData:(NSData *)responseData {
-    //parse out the json data
+    // Pings the server and asks for the parking spot data
     NSError* error;
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData
-                          
                           options:kNilOptions
                           error:&error];
     
@@ -186,28 +145,25 @@
 
 - (void) populateMap
 {
+    // Iterates through the parking spots array (which gets populated when the find parking button is pressed and fetchedData is called
     for (NSDictionary* spot in parkingSpots) {
         NSArray *coordinates = [spot objectForKey:@"latlng"];
-        NSArray *price = [spot objectForKey:@"price"];
-        NSArray *startTime = [spot objectForKey:@"startTime"];
-        NSArray *endTime = [spot objectForKey:@"endTime"];
+        int price = [[spot objectForKey:@"price"] integerValue];
+        int start = [[spot objectForKey:@"startTime"] integerValue];
+        int end = [[spot objectForKey:@"endTime"] integerValue];
+        NSString * name = [spot objectForKey:@"name"];
+        int uuid = [[spot objectForKey:@"UUID"] integerValue];
 
-
-        CLLocationCoordinate2DMake([[coordinates objectAtIndex:0] doubleValue], [[coordinates objectAtIndex:1] doubleValue]);
+//        CLLocationCoordinate2DMake([[coordinates objectAtIndex:0] doubleValue], [[coordinates objectAtIndex:1] doubleValue]);
+        // Creates a pin that gets added to the map
         MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake([[coordinates objectAtIndex:0] doubleValue], [[coordinates objectAtIndex:1] doubleValue])
+                                             andUUID:uuid
+                                             andName:name
                                            andRating:5
-                                             andRate:[[price objectAtIndex:0] intValue]
-                                        andStartTime:[[startTime objectAtIndex:0] intValue]
-                                          andEndTime:[[endTime objectAtIndex:0] intValue]];
+                                             andRate:price
+                                        andStartTime:start
+                                          andEndTime:end];
         [worldView addAnnotation:pin];
-    }
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    if (atUserLocation == false) {
-        [self zoomToUserLocation:userLocation];
-        atUserLocation = true;
     }
 }
 
@@ -220,6 +176,67 @@
     [self.worldView setRegion:region animated:YES];
 }
 
+/************************
+  LOAD NEXT VIEW METHODS
+ *************************/
+- (void)loadAddParkingSpotView
+{
+    // Pushes the next view where you can add a parking spot (button on top right)
+    AddParkingSpotController *apsc = [[AddParkingSpotController alloc] initWithNibName:@"AddParkingSpotController" bundle:nil];
+    [[self navigationController] pushViewController:apsc animated:YES];
+}
+
+- (void) loadReserveSpotView
+{
+    NSDictionary * selectedSpot;
+    for (NSDictionary* spot in parkingSpots) {
+        if ([[spot objectForKey:@"UUID"] integerValue] == currentUserUUID) {
+            selectedSpot = [NSDictionary dictionaryWithDictionary:spot];
+        }
+    }
+    // Pushes the next view where you can add a parking spot (button on top right)
+    ReserveSpotController *rsc = [[ReserveSpotController alloc] initWithMapView:worldView andUser:selectedSpot];
+    rsc.modalTransitionStyle = UIModalTransitionStyleCoverVertical ;
+    [[self navigationController] pushViewController:rsc animated:YES];
+}
+
+/******************************************
+ IBACTIONS (CALLED WHEN BUTTONS ARE PRESSED)
+ ********************************************/
+
+- (IBAction)showUserLocation:(id)sender
+{
+    
+    [self zoomToUserLocation:self.worldView.userLocation];
+}
+
+- (IBAction)findParking:(id)sender
+{
+    // Request parking spot data
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        kLatestParkingSpotsURL];
+        if (data != nil) {
+            [self performSelectorOnMainThread:@selector(fetchedData:)
+                                   withObject:data waitUntilDone:YES];
+        }
+        else {
+            NSLog(@"NO DATA! Check internet connection or server connection");
+        }
+    });
+    
+    // HACK to put pins on map
+    //    MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake((double)34.1205,(double)-118.2856)
+    //                                       andRating:5
+    //                                         andRate:0.5
+    //                                    andStartTime:2
+    //                                      andEndTime:8];
+    //    [worldView addAnnotation:pin];
+}
+
+/****************************
+ MKMAP VIEW DELEGATE METHODS
+ ****************************/
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
     // If the pin is on the users location, don't display it
@@ -231,7 +248,7 @@
     // The view that will be displayed when a user taps on a pin
     MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:parkingSpotIdentifier];
     
-
+    
     if (!pinView) {
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:parkingSpotIdentifier];
         [pinView setPinColor:MKPinAnnotationColorGreen];
@@ -262,14 +279,26 @@
     return pinView;
 }
 
-- (void) loadReserveSpotView
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    // Pushes the next view where you can add a parking spot (button on top right)
-    ReserveSpotController *rsc = [[ReserveSpotController alloc] initWithMapView:worldView];
-    rsc.modalTransitionStyle = UIModalTransitionStyleCoverVertical ;
-    [[self navigationController] pushViewController:rsc animated:YES];
+    if (atUserLocation == false) {
+        [self zoomToUserLocation:userLocation];
+        atUserLocation = true;
+    }
 }
 
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control
+{
+    currentUserUUID = (int)[(MapPin *)view.annotation getUUID];
+    
+    NSLog(@"ann.title = %@", view.annotation.title);
+}
+
+
+/***************
+   ACCESORS/ETC
+ ****************/
 - (NSArray *) parkingSpots {
     parkingSpots = _parkingSpots;
     return parkingSpots;

@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate>
 {
     CLLocationManager *locationManager;
     // contains a list of pins with info on them
@@ -21,6 +21,9 @@
     
     // used to make sure the map doesnt keep zooming in on the users location after finding it
     BOOL atUserLocation;
+    
+    // used to keep track of which pin is currently selected
+    int currentUserUUID;
     
      IBOutlet MKMapView * worldView;
 }

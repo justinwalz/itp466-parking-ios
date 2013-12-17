@@ -9,35 +9,27 @@
 #import "MapPin.h"
 
 @implementation MapPin
-@synthesize coordinate, title;
+@synthesize coordinate, title, UUID;
 
-- (id)initWithLocation: (CLPlacemark *) loc andRating: (int)rating andRate: (float) rate andStartTime: (int) strt andEndTime: (int) end
+// Test to see if works with just a coordinate
+- (id)initWithCoord: (CLLocationCoordinate2D) coord andUUID: (int) uuid andName: (NSString *) nam andRating: (int)rating andRate: (float) rate andStartTime: (int) strt andEndTime: (int) end
 {
     self = [super init];
     if (self) {
-        _location = loc;
         _rating = rating;
         _rate = rate;
         _startHour = strt;
         _endHour = end;
-        coordinate = [[loc location] coordinate];
+        UUID = uuid;
+        coordinate = coord;
+        title = [NSString stringWithFormat: @"%@ - $%.02f", nam, rate];
+        _subtitle = [NSString stringWithFormat:@"Hours: %d:00 - %d:00", strt, end];
     }
     return self;
 }
 
-// Test to see if works with just a coordinate
-- (id)initWithCoord: (CLLocationCoordinate2D) coord andRating: (int)rating andRate: (float) rate andStartTime: (int) strt andEndTime: (int) end
+- (int) getUUID
 {
-    self = [super init];
-    if (self) {
-        _rating = rating;
-        _rate = rate;
-        _startHour = strt;
-        _endHour = end;
-        coordinate = coord;
-        title = @"Goku's house";
-        _subtitle = [NSString stringWithFormat:@"%d - %d, $%f", strt, end,rate];
-    }
-    return self;
+    return UUID;
 }
 @end

@@ -23,10 +23,11 @@
     return self;
 }
 
-- (id) initWithMapView: (MKMapView *) currentMapView {
+- (id) initWithMapView: (MKMapView *) currentMapView andUser: (NSDictionary *) usr {
     self = [super initWithNibName:@"ReserveSpotController" bundle:nil];
     if (self) {
         _parkingMapView = currentMapView;
+        _user = usr;
     }
     return self;
 }
@@ -57,7 +58,7 @@
 // ------ TOP SECTION ------//
 // User Name
 - (NSString *) getUserName {
-    return @"Jack";
+    return [_user objectForKey:@"name"];
 }
 - (void) setUserName:(NSString *) name {
     _nameLabel.text = name;
@@ -126,7 +127,7 @@
 
 // Hourly Rate
 - (double) getHourlyRate {
-    return 5.00;
+    return [[_user objectForKey:@"price"] doubleValue];
 }
 - (void) setHourlyRate:(double) rate {
     _price.text = [NSString stringWithFormat:@"$%.02f",rate];
@@ -134,7 +135,7 @@
 
 // Address
 - (NSString *) getAddress {
-    return @"707 W 28th Street, Los Angeles, CA, 90007";
+    return [_user objectForKey:@"address"];
 }
 - (void) setTheAddress:(NSString *) addr {
     _address.text = addr;
@@ -143,7 +144,8 @@
 // ------ BOTTOM SECTION ------//
 // Price
 - (double) getTotalPrice {
-    return 10.00;
+    int hours = [[_user objectForKey:@"startTime"] integerValue] - [[_user objectForKey:@"endTime"] integerValue];
+    return hours*[self getHourlyRate];
 }
 - (void) setTotalPrice:(double) pr{
     _totalAmount.text = [NSString stringWithFormat:@"$%.02f",pr];
