@@ -11,6 +11,12 @@
 		7E442BE3185D5E2000C516EE /* lightGreyTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E442BE2185D5E2000C516EE /* lightGreyTexture.jpg */; };
 		7E442BE5185D64AB00C516EE /* parq_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E442BE4185D64AB00C516EE /* parq_logo.png */; };
 		7E442BE7185D677500C516EE /* parq_logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E442BE6185D677500C516EE /* parq_logo_2.png */; };
+		7E4CE7DE186104470089E227 /* Justin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7DC186104470089E227 /* Justin.jpg */; };
+		7E4CE7DF186104470089E227 /* Yen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7DD186104470089E227 /* Yen.jpg */; };
+		7E4CE7E41861083F0089E227 /* Maria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7E01861083F0089E227 /* Maria.jpg */; };
+		7E4CE7E51861083F0089E227 /* Mckenzie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7E11861083F0089E227 /* Mckenzie.jpg */; };
+		7E4CE7E61861083F0089E227 /* Ben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7E21861083F0089E227 /* Ben.jpg */; };
+		7E4CE7E71861083F0089E227 /* Fui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E4CE7E31861083F0089E227 /* Fui.jpg */; };
 		7E563F3A185FD689009FDE8D /* texture1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F37185FD689009FDE8D /* texture1.jpg */; };
 		7E563F3E185FD7AA009FDE8D /* icon-garage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3D185FD7AA009FDE8D /* icon-garage1.png */; };
 		7E563F40185FFF1C009FDE8D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3F185FFF1C009FDE8D /* location.png */; };
@@ -54,6 +60,12 @@
 		7E442BE2185D5E2000C516EE /* lightGreyTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lightGreyTexture.jpg; sourceTree = "<group>"; };
 		7E442BE4185D64AB00C516EE /* parq_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parq_logo.png; sourceTree = "<group>"; };
 		7E442BE6185D677500C516EE /* parq_logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parq_logo_2.png; sourceTree = "<group>"; };
+		7E4CE7DC186104470089E227 /* Justin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Justin.jpg; sourceTree = "<group>"; };
+		7E4CE7DD186104470089E227 /* Yen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yen.jpg; sourceTree = "<group>"; };
+		7E4CE7E01861083F0089E227 /* Maria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Maria.jpg; sourceTree = "<group>"; };
+		7E4CE7E11861083F0089E227 /* Mckenzie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mckenzie.jpg; sourceTree = "<group>"; };
+		7E4CE7E21861083F0089E227 /* Ben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ben.jpg; sourceTree = "<group>"; };
+		7E4CE7E31861083F0089E227 /* Fui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fui.jpg; sourceTree = "<group>"; };
 		7E563F37185FD689009FDE8D /* texture1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture1.jpg; sourceTree = "<group>"; };
 		7E563F3D185FD7AA009FDE8D /* icon-garage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-garage1.png"; sourceTree = "<group>"; };
 		7E563F3F185FFF1C009FDE8D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
@@ -152,6 +164,12 @@
 			isa = PBXGroup;
 			children = (
 				7E563F3F185FFF1C009FDE8D /* location.png */,
+				7E4CE7E01861083F0089E227 /* Maria.jpg */,
+				7E4CE7E11861083F0089E227 /* Mckenzie.jpg */,
+				7E4CE7E21861083F0089E227 /* Ben.jpg */,
+				7E4CE7E31861083F0089E227 /* Fui.jpg */,
+				7E4CE7DC186104470089E227 /* Justin.jpg */,
+				7E4CE7DD186104470089E227 /* Yen.jpg */,
 				7E563F3D185FD7AA009FDE8D /* icon-garage1.png */,
 				7E563F37185FD689009FDE8D /* texture1.jpg */,
 				7E442BE2185D5E2000C516EE /* lightGreyTexture.jpg */,
@@ -288,10 +306,14 @@
 			files = (
 				7EAA3F121859A3A3002DB255 /* ReserveSpotController.xib in Resources */,
 				7E563F3E185FD7AA009FDE8D /* icon-garage1.png in Resources */,
+				7E4CE7E71861083F0089E227 /* Fui.jpg in Resources */,
+				7E4CE7DF186104470089E227 /* Yen.jpg in Resources */,
+				7E4CE7E61861083F0089E227 /* Ben.jpg in Resources */,
 				7EAA3EE918597CCA002DB255 /* DJ.jpg in Resources */,
 				7EAA3ED8185979D6002DB255 /* AddParkingSpotController.xib in Resources */,
 				7E563F40185FFF1C009FDE8D /* location.png in Resources */,
 				7E442BE7185D677500C516EE /* parq_logo_2.png in Resources */,
+				7E4CE7E51861083F0089E227 /* Mckenzie.jpg in Resources */,
 				7EAA3EB0185978EB002DB255 /* InfoPlist.strings in Resources */,
 				7EAA3EB8185978EB002DB255 /* Images.xcassets in Resources */,
 				7E442BE1185D543B00C516EE /* Driveway.jpg in Resources */,
@@ -299,6 +321,8 @@
 				7E442BE5185D64AB00C516EE /* parq_logo.png in Resources */,
 				7EAA3EE018597A50002DB255 /* MapViewController.xib in Resources */,
 				7E563F3A185FD689009FDE8D /* texture1.jpg in Resources */,
+				7E4CE7E41861083F0089E227 /* Maria.jpg in Resources */,
+				7E4CE7DE186104470089E227 /* Justin.jpg in Resources */,
 				7E442BE3185D5E2000C516EE /* lightGreyTexture.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

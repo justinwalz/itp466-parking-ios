@@ -23,9 +23,32 @@
         UUID = uuid;
         coordinate = coord;
         title = [NSString stringWithFormat: @"%@ - $%.02f", nam, rate];
-        _subtitle = [NSString stringWithFormat:@"Hours: %d:00 - %d:00", strt, end];
+        _subtitle = [NSString stringWithFormat:@"Hours: %@", [self convertToAMPMFromStart:strt andEnd:end]];
     }
     return self;
+}
+
+- (NSString *) convertToAMPMFromStart: (int) start andEnd: (int) end {
+    NSString * startStr;
+    NSString * endStr;
+    if (start < 12) {
+        startStr = [NSString stringWithFormat:@"%dam",start];
+    } else {
+        if (start != 12) {
+            start -= 12;
+        }
+        startStr = [NSString stringWithFormat:@"%dpm",start];
+    }
+    if (end < 12) {
+        endStr = [NSString stringWithFormat:@"%dam",end];
+    }
+    else {
+        if (end != 12) {
+            end -= 12;
+        }
+        endStr = [NSString stringWithFormat:@"%dpm",end];
+    }
+    return [NSString stringWithFormat:@"%@-%@",startStr,endStr];
 }
 
 - (int) getUUID

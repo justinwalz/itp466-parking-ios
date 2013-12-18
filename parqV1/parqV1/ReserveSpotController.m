@@ -5,6 +5,8 @@
 //  Created by Duncan Riefler on 12/11/13.
 //  Copyright (c) 2013 Duncan Riefler. All rights reserved.
 //
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
+#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.200.152.228:3000/reserve"] //2
 
 #import "ReserveSpotController.h"
 
@@ -32,6 +34,34 @@
     return self;
 }
 
+- (IBAction)reserveButtonPressed:(id)sender {
+    NSDictionary* info = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          [_user objectForKey:@"UUID"],@"id",
+                          nil];
+    
+    NSError *error;
+    
+    //convert object to data
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:info
+                                                       options:NSJSONWritingPrettyPrinted error:&error];
+    if (jsonData) {
+        NSLog(@"request sent");
+        NSString *postLength = [NSString stringWithFormat:@"%d", [jsonData length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:kLatestParkingSpotsURL];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:jsonData];
+        
+        // generates an autoreleased NSURLConnection
+        [NSURLConnection connectionWithRequest:request delegate:self];
+    }
+    else if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,10 +78,57 @@
     [self setHourlyRate:[self getHourlyRate]];
     [self setTheAddress:[self getAddress]];
     [self setParkingMapView:[self parkingMapView]];
+    
+    // Do map setup
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([self getPinCoordinates], 800, 800);
+    [self.parkingMapView setRegion:region animated:YES];
+    
     // Bottom Section
     [self setTotalPrice:[self getTotalPrice]];
     [self setTheStartTime:[self getStartTime]];
     [self setTheEndTime:[self getEndTime]];
+    
+    // Reserve button
+    // Add corner radius
+    self.reserveButton.layer.cornerRadius = 4.0f;
+    self.reserveButton.layer.masksToBounds = NO;
+    
+    // Create colors for a gradient
+    UIColor *color1 =
+    [UIColor colorWithRed:(float)62/255 green:(float)177/255 blue:(float)213/255 alpha:1.0];
+    UIColor *color2 =
+    [UIColor colorWithRed:(float)72/255 green:(float)200/255 blue:(float)222/255 alpha:1.0];
+    UIColor *color3 =
+    [UIColor colorWithRed:(float)72/255 green:(float)200/255 blue:(float)222/255 alpha:1.0];
+    UIColor *color4 =
+    [UIColor colorWithRed:(float)72/255 green:(float)200/255 blue:(float)222/255 alpha:1.0];
+    UIColor *color5 =
+    [UIColor colorWithRed:(float)62/255 green:(float)177/255 blue:(float)213/255 alpha:1.0];
+    
+    // Create the gradient
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    
+    // Set colors
+    gradient.colors = [NSArray arrayWithObjects:
+                       (id)color1.CGColor,
+                       (id)color2.CGColor,
+                       (id)color3.CGColor,
+                       (id)color4.CGColor,
+                       (id)color5.CGColor,
+                       nil];
+    
+    // Set bounds
+    gradient.frame = self.reserveButton.bounds;
+    gradient.cornerRadius = 4.0f;
+    
+    // Add the gradient to the view
+    [self.reserveButton.layer insertSublayer:gradient atIndex:0];
+
+}
+
+- (CLLocationCoordinate2D) getPinCoordinates {
+    NSArray * coords = [_user objectForKey:@"latlng"];
+    return CLLocationCoordinate2DMake([[coords objectAtIndex:0] doubleValue], [[coords objectAtIndex:1] doubleValue]);
 }
 
 
@@ -82,7 +159,15 @@
 
 // Profile picture
 - (NSString *) getProfPic {
-    return @"DJ.jpg";
+    NSString * name = [_user objectForKey:@"name"];
+    if ([name isEqualToString:@"Justin Walz"]) {
+        return @"Justin.jpg";
+    }
+    else if ([name isEqualToString:@"Yen Hoang"]) {
+        return @"Yen.jpg";
+    }
+    else
+        return @"DJ.jpg";
 }
 - (void) setProfilePic:(NSString *)profPic {
     [_ProfPic setImage:[UIImage imageNamed:profPic]];
@@ -100,7 +185,28 @@
 
 // Hours Available
 - (NSString *) getHoursAvailable {
-    return @"10am-6pm";
+    int start = [[_user objectForKey:@"startTime"] integerValue];
+    int end = [[_user objectForKey:@"endTime"] integerValue];
+    NSString * startStr;
+    NSString * endStr;
+    if (start < 12) {
+        startStr = [NSString stringWithFormat:@"%dam",start];
+    } else {
+        if (start != 12) {
+            start -= 12;
+        }
+        startStr = [NSString stringWithFormat:@"%dpm",start];
+    }
+    if (end < 12) {
+        endStr = [NSString stringWithFormat:@"%dam",end];
+    }
+    else {
+        if (end != 12) {
+            end -= 12;
+        }
+        endStr = [NSString stringWithFormat:@"%dpm",end];
+    }
+    return [NSString stringWithFormat:@"%@-%@",startStr,endStr];
 }
 
 - (NSDate *) getStartHour {
@@ -144,7 +250,7 @@
 // ------ BOTTOM SECTION ------//
 // Price
 - (double) getTotalPrice {
-    int hours = [[_user objectForKey:@"startTime"] integerValue] - [[_user objectForKey:@"endTime"] integerValue];
+    int hours = abs([[_user objectForKey:@"startTime"] integerValue] - [[_user objectForKey:@"endTime"] integerValue]);
     return hours*[self getHourlyRate];
 }
 - (void) setTotalPrice:(double) pr{
@@ -250,7 +356,7 @@
     NSDateComponents *components = [calendar components:unitFlags fromDate:start toDate:end options:0];
     NSInteger hours = [components hour]/3600;
     NSLog(@"%ld",(long)hours);
-    [self setTotalPrice:(int)hours];
+//    [self setTotalPrice:(int)hours];
 }
 
 - (void)removeViews:(id)object {

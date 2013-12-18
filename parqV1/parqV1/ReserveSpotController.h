@@ -11,7 +11,7 @@
 
 typedef enum {None,Start,End} DatePickerState;
 
-@interface ReserveSpotController : UIViewController
+@interface ReserveSpotController : UIViewController<MKMapViewDelegate>
 {
     DatePickerState datePickerState;
 }
@@ -35,8 +35,10 @@ typedef enum {None,Start,End} DatePickerState;
 @property (weak, nonatomic) IBOutlet UILabel *totalAmount;
 @property (weak, nonatomic) IBOutlet UIButton *startTime;
 @property (weak, nonatomic) IBOutlet UIButton *endTime;
+@property (weak, nonatomic) IBOutlet UIButton *reserveButton;
 
 - (id) initWithMapView: (MKMapView *) currentMapView andUser: (NSDictionary *) usr;
+- (IBAction)reserveButtonPressed:(id)sender;
 
 // ------ TOP SECTION ------//
 // User Name

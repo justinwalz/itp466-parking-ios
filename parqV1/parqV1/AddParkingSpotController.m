@@ -7,6 +7,7 @@
 //
 
 #import "AddParkingSpotController.h"
+#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.200.152.228:3000/add"] //2
 
 @interface AddParkingSpotController ()
 
@@ -42,7 +43,7 @@
     if (jsonData) {
     NSLog(@"request sent");
     NSString *postLength = [NSString stringWithFormat:@"%d", [jsonData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://54.200.32.8:3000/add"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:kLatestParkingSpotsURL];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -60,7 +61,7 @@
 - (NSString *) getStringFromDate: (NSDate *) date
 {
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"HH"];
    return [dateFormatter stringFromDate:date];
 }
 

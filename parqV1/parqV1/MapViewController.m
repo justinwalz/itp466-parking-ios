@@ -7,7 +7,7 @@
 //
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
-#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.201.140.112:3000/spots"] //2
+#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.200.152.228:3000/spots"] //2
 
 
 #import "MapViewController.h"
@@ -154,7 +154,6 @@
         NSString * name = [spot objectForKey:@"name"];
         int uuid = [[spot objectForKey:@"UUID"] integerValue];
 
-//        CLLocationCoordinate2DMake([[coordinates objectAtIndex:0] doubleValue], [[coordinates objectAtIndex:1] doubleValue]);
         // Creates a pin that gets added to the map
         MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake([[coordinates objectAtIndex:0] doubleValue], [[coordinates objectAtIndex:1] doubleValue])
                                              andUUID:uuid
@@ -172,7 +171,7 @@
 {
     if (!userLocation)
         return;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 1200, 1200);
     [self.worldView setRegion:region animated:YES];
 }
 
@@ -256,7 +255,7 @@
         pinView.canShowCallout = YES; // can display a text bubble when tapped on
         
         // Setting the image to be an image of me hehe
-        UIImage *originalImage = [UIImage imageNamed:@"DJ.jpg"];
+        UIImage *originalImage = [UIImage imageNamed:@"Driveway.jpg"];
         CGSize destinationSize = CGSizeMake(40, 40);
         UIGraphicsBeginImageContext(destinationSize);
         [originalImage drawInRect:CGRectMake(0,0,destinationSize.width,destinationSize.height)];
@@ -287,14 +286,19 @@
     }
 }
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
-calloutAccessoryControlTapped:(UIControl *)control
+- (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     currentUserUUID = (int)[(MapPin *)view.annotation getUUID];
-    
-    NSLog(@"ann.title = %@", view.annotation.title);
 }
 
+/**************************
+ SEARCH BAR DELEGATE METHODS
+ ***************************/
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)search
+{
+//    search.frame.origin.x = 0;
+    
+}
 
 /***************
    ACCESORS/ETC
