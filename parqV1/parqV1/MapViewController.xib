@@ -43,11 +43,14 @@
                                 <action selector="findParking:" destination="-1" eventType="touchUpInside" id="z4e-93-P7j"/>
                             </connections>
                         </button>
-                        <searchBar contentMode="redraw" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkK-MR-g16">
+                        <searchBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkK-MR-g16">
                             <rect key="frame" x="10" y="16" width="300" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="gRJ-4v-1vD"/>
+                            </connections>
                         </searchBar>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

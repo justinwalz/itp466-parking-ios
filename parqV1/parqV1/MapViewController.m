@@ -14,7 +14,7 @@
 #import "MapPin.h"
 #import "AddParkingSpotController.h"
 #import "ReserveSpotController.h"
-
+#import "SearchViewController.h"
 
 @implementation MapViewController
 @synthesize parkingSpots, worldView;
@@ -225,12 +225,14 @@
     });
     
     // HACK to put pins on map
-    //    MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake((double)34.1205,(double)-118.2856)
-    //                                       andRating:5
-    //                                         andRate:0.5
-    //                                    andStartTime:2
-    //                                      andEndTime:8];
-    //    [worldView addAnnotation:pin];
+        MapPin * pin = [[MapPin alloc] initWithCoord:CLLocationCoordinate2DMake((double)34.1205,(double)-118.2856)
+                                             andUUID:1
+                                             andName:@"DJ"
+                                           andRating:5
+                                             andRate:0.5
+                                        andStartTime:2
+                                          andEndTime:8];
+        [worldView addAnnotation:pin];
 }
 
 /****************************
@@ -294,10 +296,28 @@
 /**************************
  SEARCH BAR DELEGATE METHODS
  ***************************/
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)search
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-//    search.frame.origin.x = 0;
+    SearchViewController * svc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.4;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionMoveIn;
+        transition.subtype = kCATransitionFromTop;
+        [self.navigationController.view.layer addAnimation:transition
+                                                forKey:kCATransition];
     
+//    - (void)popViewControllerRetro {
+//        CATransition *transition = [CATransition animation];
+//        transition.duration = 0.25;
+//        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//        transition.type = kCATransitionPush;
+//        transition.subtype = kCATransitionFromLeft;
+//        [self.view.layer addAnimation:transition forKey:nil];
+//        
+//        [self popViewControllerAnimated:NO];
+//    }
+    [[self navigationController] pushViewController:svc animated:NO];
 }
 
 /***************

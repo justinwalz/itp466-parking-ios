@@ -29,7 +29,17 @@
     self = [super initWithNibName:@"ReserveSpotController" bundle:nil];
     if (self) {
         _parkingMapView = currentMapView;
-        _user = usr;
+        if(usr != NULL)
+            _user = usr;
+        else {
+            _user = [[NSDictionary alloc] initWithObjectsAndKeys:
+                     [NSNumber numberWithInt:1], @"UUID",
+                    @"DJ", @"name",
+                     [NSNumber numberWithInt:2], @"price",
+                     [NSNumber numberWithInt:13], @"startTime",
+                     [NSNumber numberWithInt:17], @"endTime",
+                     nil];
+        }
     }
     return self;
 }
@@ -85,8 +95,8 @@
     
     // Bottom Section
     [self setTotalPrice:[self getTotalPrice]];
-    [self setTheStartTime:[self getStartTime]];
-    [self setTheEndTime:[self getEndTime]];
+    [self setTheStartTime:[self getStartHour]];
+    [self setTheEndTime:[self getEndHour]];
     
     // Reserve button
     // Add corner radius
@@ -209,24 +219,6 @@
     return [NSString stringWithFormat:@"%@-%@",startStr,endStr];
 }
 
-- (NSDate *) getStartHour {
-    NSDate *now = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
-    [components setHour:10];
-    NSDate *today10am = [calendar dateFromComponents:components];
-    return today10am;
-}
-
-- (NSDate *) getEndHour {
-    NSDate *now = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
-    [components setHour:18];
-    NSDate *today6pm = [calendar dateFromComponents:components];
-    return today6pm;
-}
-
 - (void) setHoursAvailable:(NSString *) hours {
     _numHours.text = hours;
 }
@@ -258,22 +250,31 @@
 }
 
 // Start Time
-- (NSDate *) getStartTime {
-    return [[NSDate alloc] init] ;
-}
 - (void) setTheStartTime:(NSDate *) date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
     
     NSString *stringFromDate = [formatter stringFromDate:date];
-    
+
     [_startTime setTitle:stringFromDate forState:UIControlStateNormal];
 }
 
-// End Time
-- (NSDate *) getEndTime {
-    return [[NSDate alloc] init] ;
+
+- (NSDate *) getStartHour {
+    int start = [[_user objectForKey:@"startTime"] integerValue];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setHour:start];
+    [comps setDay:18];
+    [comps setMonth:12];
+    [comps setYear:2013];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *startTime = [gregorian dateFromComponents:comps];
+    return startTime;
 }
+
+// End Time
 - (void) setTheEndTime:(NSDate *) date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
@@ -281,6 +282,20 @@
     NSString *stringFromDate = [formatter stringFromDate:date];
     
     [_endTime setTitle:stringFromDate forState:UIControlStateNormal];
+}
+
+- (NSDate *) getEndHour {
+    int end = [[_user objectForKey:@"endTime"] integerValue];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setHour:end];
+    [comps setDay:18];
+    [comps setMonth:12];
+    [comps setYear:2013];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *endTime = [gregorian dateFromComponents:comps];
+    return endTime;
 }
 
 // DATEPICKER STUFF
@@ -300,19 +315,24 @@
     if ([self.view viewWithTag:9]) {
         return;
     }
+    // Create the frames for toolbar and datepicker
     CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44, 320, 44);
     CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216, 320, 216);
     
+    // Add a light dark overlay to the screen
     UIView *darkView = [[UIView alloc] initWithFrame:self.view.bounds] ;
     darkView.alpha = 0;
     darkView.backgroundColor = [UIColor blackColor];
     darkView.tag = 9;
+    
+    // Make it so that when you tap on this dark overlay, the date picker is dismissed
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDatePicker:)];
     [darkView addGestureRecognizer:tapGesture];
     [self.view addSubview:darkView];
     
+    // Create the date picker
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height+44, 320, 216)];
-    datePicker.backgroundColor = [UIColor lightGrayColor];
+    datePicker.backgroundColor = [UIColor whiteColor];
     [datePicker setDatePickerMode:UIDatePickerModeTime];
     [datePicker setMinuteInterval:30];
     [datePicker setMinimumDate:[self getStartHour]];
@@ -321,6 +341,7 @@
     [datePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:datePicker];
     
+    // Create the toolbar
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, 320, 44)];
     toolBar.tag = 11;
     toolBar.barStyle = UIBarStyleDefault;
@@ -329,34 +350,33 @@
     [toolBar setItems:[NSArray arrayWithObjects:doneButton, nil]];
 //    [self.view addSubview:toolBar];
     
+    // Make the datepicker appear with animation
     [UIView beginAnimations:@"MoveIn" context:nil];
     toolBar.frame = toolbarTargetFrame;
     datePicker.frame = datePickerTargetFrame;
-    darkView.alpha = 0.5;
+    darkView.alpha = 0.6;
     [UIView commitAnimations];
 }
 
 - (void)changeDate:(UIDatePicker *)sender {
-    NSString * newTime = [NSString stringWithFormat:@"New Date: %@", sender.date];
-    
     if (datePickerState == Start){
         [self setTheStartTime:sender.date];
-//        [[self startTime] setTitle:newTime forState:UIControlStateNormal];
     }
     else if (datePickerState == End) {
         [self setTheEndTime:sender.date];
-//        [[self endTime] setTitle:newTime forState:UIControlStateNormal];
     }
     
     // Calculate new price
-    NSDate *start = [self getStartTime];
-    NSDate *end = [self getEndTime];
-    NSUInteger unitFlags = NSDayCalendarUnit;
+    NSDate *start = [self getStartHour];
+    NSDate *end = [self getEndHour];
+    
+    unsigned int unitFlags = NSHourCalendarUnit;
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:unitFlags fromDate:start toDate:end options:0];
-    NSInteger hours = [components hour]/3600;
+    NSDateComponents *comps = [calendar components:unitFlags fromDate:start  toDate:end  options:0];
+    int hours = [comps hour];
     NSLog(@"%ld",(long)hours);
-//    [self setTotalPrice:(int)hours];
+    double price = hours * [self getHourlyRate];
+    [self setTotalPrice:price];
 }
 
 - (void)removeViews:(id)object {

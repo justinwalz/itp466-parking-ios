@@ -32,6 +32,7 @@ typedef enum {None,Start,End} DatePickerState;
 
 
 // Bottom Part
+@property (weak, nonatomic) IBOutlet UILabel *totalWantedHours;
 @property (weak, nonatomic) IBOutlet UILabel *totalAmount;
 @property (weak, nonatomic) IBOutlet UIButton *startTime;
 @property (weak, nonatomic) IBOutlet UIButton *endTime;
@@ -72,7 +73,13 @@ typedef enum {None,Start,End} DatePickerState;
 // Address
 - (NSString *) getAddress;
 - (void) setTheAddress:(NSString *) addr;
+
 // ------ BOTTOM SECTION ------//
+
+// Wanted Hours
+- (float) getNumWantedHours;
+- (void) setNumWantedHours:(float) wntd;
+
 // Price
 - (double) getTotalPrice ;
 - (void) setTotalPrice:(double) pr;
