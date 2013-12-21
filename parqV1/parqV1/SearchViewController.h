@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "MapViewController.h"
 
 @interface SearchViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+{
+    NSArray *searchResults;
+    MapViewController *mapViewController;
+}
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

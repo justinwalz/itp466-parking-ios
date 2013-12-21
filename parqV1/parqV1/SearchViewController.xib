@@ -6,25 +6,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController">
             <connections>
-                <outlet property="searchDisplayController" destination="GGX-em-aG3" id="N9x-oA-xIb"/>
+                <outlet property="searchBar" destination="PXn-Hd-357" id="1sI-hb-YuM"/>
+                <outlet property="searchDisplayController" destination="IvP-jI-mKT" id="Npz-xT-tcU"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXn-Hd-357">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="H0e-8o-H9H"/>
+                    </connections>
+                </searchBar>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <searchDisplayController id="GGX-em-aG3">
+        <searchDisplayController id="IvP-jI-mKT">
             <connections>
-                <outlet property="delegate" destination="-1" id="NmT-Ho-XQT"/>
-                <outlet property="searchContentsController" destination="-1" id="pua-29-ypJ"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="dZ9-gq-t6U"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="8t7-nx-beb"/>
+                <outlet property="delegate" destination="-1" id="2MG-Mc-4A8"/>
+                <outlet property="searchBar" destination="PXn-Hd-357" id="GYk-lZ-Rqn"/>
+                <outlet property="searchContentsController" destination="-1" id="hFq-Zy-yya"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="xOH-i7-kEp"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="UAZ-Qn-jFI"/>
             </connections>
         </searchDisplayController>
     </objects>
