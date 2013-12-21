@@ -75,6 +75,7 @@
     
     // Search Bar button
     self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    [self.searchBar setUserInteractionEnabled:NO];
     
     // Find Parking Button
     // Add corner radius
@@ -203,6 +204,20 @@
  IBACTIONS (CALLED WHEN BUTTONS ARE PRESSED)
  ********************************************/
 
+- (IBAction)searchBarButtonPressed:(id)sender {
+    NSLog(@"Bein called");
+    SearchViewController * svc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.4;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    [self.navigationController.view.layer addAnimation:transition
+                                                forKey:kCATransition];
+    
+    [[self navigationController] pushViewController:svc animated:NO];
+}
+
 - (IBAction)showUserLocation:(id)sender
 {
     
@@ -291,33 +306,6 @@
 - (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     currentUserUUID = (int)[(MapPin *)view.annotation getUUID];
-}
-
-/**************************
- SEARCH BAR DELEGATE METHODS
- ***************************/
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    SearchViewController * svc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
-        CATransition *transition = [CATransition animation];
-        transition.duration = 0.4;
-        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        transition.type = kCATransitionMoveIn;
-        transition.subtype = kCATransitionFromTop;
-        [self.navigationController.view.layer addAnimation:transition
-                                                forKey:kCATransition];
-    
-//    - (void)popViewControllerRetro {
-//        CATransition *transition = [CATransition animation];
-//        transition.duration = 0.25;
-//        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//        transition.type = kCATransitionPush;
-//        transition.subtype = kCATransitionFromLeft;
-//        [self.view.layer addAnimation:transition forKey:nil];
-//        
-//        [self popViewControllerAnimated:NO];
-//    }
-    [[self navigationController] pushViewController:svc animated:NO];
 }
 
 /***************

@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
 {
     CLLocationManager *locationManager;
     // contains a list of pins with info on them
@@ -33,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *userLocationButton;
 @property (weak, nonatomic) IBOutlet UIButton *findParkingButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *searchBarButton;
+- (IBAction)searchBarButtonPressed:(id)sender;
+
 - (IBAction)showUserLocation:(id)sender;
 
 - (IBAction)findParking:(id)sender;

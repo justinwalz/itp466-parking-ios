@@ -28,6 +28,24 @@
     [super viewDidLoad];
     // Get rid of back button
     [self.navigationItem setHidesBackButton:YES animated:NO];
+    // Add cancel button as right item of nav bar
+     UIBarButtonItem *barButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                   target:self
+                                   action:@selector(dismissController)];
+    [[self navigationItem] setRightBarButtonItem:barButton];
+}
+
+- (void) dismissController
+{
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.2;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromBottom;
+    [self.navigationController.view.layer addAnimation:transition
+                                                forKey:kCATransition];
+    [self.navigationController popViewControllerAnimated:NO];
     
 }
 

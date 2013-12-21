@@ -9,6 +9,7 @@
                 <outlet property="bottomView" destination="CGI-dF-2xs" id="fwW-DJ-uhK"/>
                 <outlet property="findParkingButton" destination="jxT-Ah-Apk" id="qLl-9s-Vr9"/>
                 <outlet property="searchBar" destination="tkK-MR-g16" id="SVP-FV-lXp"/>
+                <outlet property="searchBarButton" destination="Eec-aI-6ck" id="DTV-Z3-keF"/>
                 <outlet property="userLocationButton" destination="RvT-lG-sgp" id="zOU-Y1-9G0"/>
                 <outlet property="view" destination="RRF-E6-NNy" id="vTE-Jr-N6J"/>
                 <outlet property="worldView" destination="XkD-Lq-QSq" id="5Tf-SL-j65"/>
@@ -52,6 +53,18 @@
                                 <outlet property="delegate" destination="-1" id="gRJ-4v-1vD"/>
                             </connections>
                         </searchBar>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eec-aI-6ck">
+                            <rect key="frame" x="20" y="20" width="280" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="searchBarButtonPressed:" destination="-1" eventType="touchUpInside" id="774-DG-xdt"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
@@ -73,6 +86,14 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bZ6-g1-VlW">
+            <rect key="frame" x="0.0" y="0.0" width="73" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+            <state key="normal" title="Button">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+        </button>
     </objects>
     <resources>
         <image name="location.png" width="48" height="48"/>

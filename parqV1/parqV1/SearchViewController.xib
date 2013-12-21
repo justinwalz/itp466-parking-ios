@@ -14,16 +14,6 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Enter Parking Location" translatesAutoresizingMaskIntoConstraints="NO" id="TEE-9F-CmN">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="KTQ-9X-48S"/>
-                    </connections>
-                </searchBar>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -32,7 +22,6 @@
         <searchDisplayController id="GGX-em-aG3">
             <connections>
                 <outlet property="delegate" destination="-1" id="NmT-Ho-XQT"/>
-                <outlet property="searchBar" destination="TEE-9F-CmN" id="uwY-qY-hzJ"/>
                 <outlet property="searchContentsController" destination="-1" id="pua-29-ypJ"/>
                 <outlet property="searchResultsDataSource" destination="-1" id="dZ9-gq-t6U"/>
                 <outlet property="searchResultsDelegate" destination="-1" id="8t7-nx-beb"/>
