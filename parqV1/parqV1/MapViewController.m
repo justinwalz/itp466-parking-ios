@@ -205,8 +205,7 @@
  ********************************************/
 
 - (IBAction)searchBarButtonPressed:(id)sender {
-    NSLog(@"Bein called");
-    SearchViewController * svc = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+    SearchViewController * svc = [[SearchViewController alloc] initWithMapViewController:self];
     CATransition *transition = [CATransition animation];
     transition.duration = 0.4;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];

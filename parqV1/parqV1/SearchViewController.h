@@ -15,6 +15,8 @@
     NSArray *searchResults;
     MapViewController *mapViewController;
 }
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) UISearchBar *searchBar;
+
+- (id) initWithMapViewController: (MapViewController *) mvc;
 
 @end

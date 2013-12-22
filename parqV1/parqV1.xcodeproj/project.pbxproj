@@ -21,7 +21,6 @@
 		7E563F3E185FD7AA009FDE8D /* icon-garage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3D185FD7AA009FDE8D /* icon-garage1.png */; };
 		7E563F40185FFF1C009FDE8D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3F185FFF1C009FDE8D /* location.png */; };
 		7EA4F3CC186331CA00DF05A9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA4F3CA186331CA00DF05A9 /* SearchViewController.m */; };
-		7EA4F3CD186331CA00DF05A9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA4F3CB186331CA00DF05A9 /* SearchViewController.xib */; };
 		7EAA3EA6185978EB002DB255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA5185978EB002DB255 /* Foundation.framework */; };
 		7EAA3EA8185978EB002DB255 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */; };
 		7EAA3EAA185978EB002DB255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA9185978EB002DB255 /* UIKit.framework */; };
@@ -73,7 +72,6 @@
 		7E563F3F185FFF1C009FDE8D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		7EA4F3C9186331CA00DF05A9 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		7EA4F3CA186331CA00DF05A9 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		7EA4F3CB186331CA00DF05A9 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		7EAA3EA2185978EB002DB255 /* parqV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parqV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAA3EA5185978EB002DB255 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -189,7 +187,6 @@
 				7EAA3EDD18597A50002DB255 /* MapViewController.xib */,
 				7EA4F3C9186331CA00DF05A9 /* SearchViewController.h */,
 				7EA4F3CA186331CA00DF05A9 /* SearchViewController.m */,
-				7EA4F3CB186331CA00DF05A9 /* SearchViewController.xib */,
 				7EAA3F0E1859A3A2002DB255 /* ReserveSpotController.h */,
 				7EAA3F0F1859A3A2002DB255 /* ReserveSpotController.m */,
 				7EAA3F101859A3A3002DB255 /* ReserveSpotController.xib */,
@@ -332,7 +329,6 @@
 				7E4CE7E41861083F0089E227 /* Maria.jpg in Resources */,
 				7E4CE7DE186104470089E227 /* Justin.jpg in Resources */,
 				7E442BE3185D5E2000C516EE /* lightGreyTexture.jpg in Resources */,
-				7EA4F3CD186331CA00DF05A9 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

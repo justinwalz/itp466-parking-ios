@@ -43,12 +43,14 @@
     [super viewDidLoad];
     [self.searchDisplayController setDelegate:self];
     [_searchBar setDelegate:self];
+    
+    // Adjust position of view to fix a bug
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
+    self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
+    
     // Get rid of back button
     [self.navigationItem setHidesBackButton:YES animated:NO];
-    
-    // Add search bar as Title
-    self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
     
     // Add cancel button as right item of nav bar
      UIBarButtonItem *barButton = [[UIBarButtonItem alloc]
@@ -92,7 +94,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
 // Determines number of rows in the table. If there
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (searchResults) {
         return [searchResults count];
         
     } else {
@@ -116,6 +118,19 @@ shouldReloadTableForSearchString:(NSString *)searchString
     cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Create a mapItem from the chosen result
+    MKMapItem *item = [searchResults objectAtIndex:indexPath.row];
+    // set the searchBar text on the MapViewController to the address of the chosen place
+    [[mapViewController searchBar] setText:item.name];
+
+    // Dismiss the search view controller
+    [self dismissController];
+    // get all the parking spots in that area and display them on the map (probably send a message to the server to ask for that data)
+    
 }
 
 /***********************
