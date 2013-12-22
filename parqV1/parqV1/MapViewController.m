@@ -14,7 +14,7 @@
 #import "MapPin.h"
 #import "AddParkingSpotController.h"
 #import "ReserveSpotController.h"
-#import "SearchViewController.h"
+#import "SearchViewControllerNew.h"
 
 @implementation MapViewController
 @synthesize parkingSpots, worldView;
@@ -205,7 +205,7 @@
  ********************************************/
 
 - (IBAction)searchBarButtonPressed:(id)sender {
-    SearchViewController * svc = [[SearchViewController alloc] initWithMapViewController:self];
+    SearchViewControllerNew * svc = [[SearchViewControllerNew alloc] initWithMapViewController:self];
     CATransition *transition = [CATransition animation];
     transition.duration = 0.4;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];

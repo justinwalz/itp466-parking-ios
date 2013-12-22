@@ -1,18 +1,19 @@
 //
-//  SearchViewController.m
+//  SearchViewControllerNew.m
 //  parqV1
 //
-//  Created by Duncan Riefler on 12/19/13.
+//  Created by Duncan Riefler on 12/21/13.
 //  Copyright (c) 2013 Duncan Riefler. All rights reserved.
 //
 
-#import "SearchViewController.h"
 
-@interface SearchViewController ()
+#import "SearchViewControllerNew.h"
+
+@interface SearchViewControllerNew ()
 
 @end
 
-@implementation SearchViewController
+@implementation SearchViewControllerNew
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,7 +26,7 @@
 
 - (id) initWithMapViewController: (MapViewController *) mvc
 {
-    self = [super initWithNibName:@"SearchViewController" bundle:nil];
+    self = [super initWithNibName:@"SearchViewControllerNew" bundle:nil];
     if (self) {
         mapViewController = mvc;
     }
@@ -46,17 +47,17 @@
     
     // Adjust position of view to fix a bug
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    
     self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
     
     // Get rid of back button
     [self.navigationItem setHidesBackButton:YES animated:NO];
     
     // Add cancel button as right item of nav bar
-     UIBarButtonItem *barButton = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                   target:self
-                                   action:@selector(dismissController)];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                  target:self
+                                  action:@selector(dismissController)];
     [[self navigationItem] setRightBarButtonItem:barButton];
 }
 
@@ -64,7 +65,7 @@
  SEARCH DELEGATE METHODS
  ************************/
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-//    [searchBar setShowsCancelButton:YES animated:YES];
+    //    [searchBar setShowsCancelButton:YES animated:YES];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -126,7 +127,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     MKMapItem *item = [searchResults objectAtIndex:indexPath.row];
     // set the searchBar text on the MapViewController to the address of the chosen place
     [[mapViewController searchBar] setText:item.name];
-
+    
     // Dismiss the search view controller
     [self dismissController];
     // get all the parking spots in that area and display them on the map (probably send a message to the server to ask for that data)
