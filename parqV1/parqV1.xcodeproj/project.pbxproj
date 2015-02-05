@@ -22,6 +22,10 @@
 		7E563F3A185FD689009FDE8D /* texture1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F37185FD689009FDE8D /* texture1.jpg */; };
 		7E563F3E185FD7AA009FDE8D /* icon-garage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3D185FD7AA009FDE8D /* icon-garage1.png */; };
 		7E563F40185FFF1C009FDE8D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E563F3F185FFF1C009FDE8D /* location.png */; };
+		7E6A3C7618C81AFE00BBCC7D /* ReserveConfirmationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A3C7418C81AFE00BBCC7D /* ReserveConfirmationPage.m */; };
+		7E6A3C7718C81AFE00BBCC7D /* ReserveConfirmationPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A3C7518C81AFE00BBCC7D /* ReserveConfirmationPage.xib */; };
+		7E6A3C7E18C81F6E00BBCC7D /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E6A3C7D18C81F6E00BBCC7D /* Checkmark.png */; };
+		7E7BA21D190762AC0014F06F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BA21C190762AC0014F06F /* FacebookSDK.framework */; };
 		7EAA3EA6185978EB002DB255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA5185978EB002DB255 /* Foundation.framework */; };
 		7EAA3EA8185978EB002DB255 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */; };
 		7EAA3EAA185978EB002DB255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA3EA9185978EB002DB255 /* UIKit.framework */; };
@@ -45,6 +49,9 @@
 		7EAA3F0D1859A0AC002DB255 /* House.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3F0C1859A0AC002DB255 /* House.png */; };
 		7EAA3F111859A3A3002DB255 /* ReserveSpotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA3F0F1859A3A2002DB255 /* ReserveSpotController.m */; };
 		7EAA3F121859A3A3002DB255 /* ReserveSpotController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA3F101859A3A3002DB255 /* ReserveSpotController.xib */; };
+		7EDB25C91905C3A6004868FC /* PQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB25C81905C3A6004868FC /* PQUser.m */; };
+		7EDB25CD1905D3FE004868FC /* PQSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB25CB1905D3FE004868FC /* PQSignUpViewController.m */; };
+		7EDB25CE1905D3FE004868FC /* PQSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EDB25CC1905D3FE004868FC /* PQSignUpViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +81,11 @@
 		7E563F37185FD689009FDE8D /* texture1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture1.jpg; sourceTree = "<group>"; };
 		7E563F3D185FD7AA009FDE8D /* icon-garage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-garage1.png"; sourceTree = "<group>"; };
 		7E563F3F185FFF1C009FDE8D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		7E6A3C7318C81AFE00BBCC7D /* ReserveConfirmationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveConfirmationPage.h; sourceTree = "<group>"; };
+		7E6A3C7418C81AFE00BBCC7D /* ReserveConfirmationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveConfirmationPage.m; sourceTree = "<group>"; };
+		7E6A3C7518C81AFE00BBCC7D /* ReserveConfirmationPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveConfirmationPage.xib; sourceTree = "<group>"; };
+		7E6A3C7D18C81F6E00BBCC7D /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
+		7E7BA21C190762AC0014F06F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		7EAA3EA2185978EB002DB255 /* parqV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parqV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAA3EA5185978EB002DB255 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAA3EA7185978EB002DB255 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,6 +117,11 @@
 		7EAA3F0E1859A3A2002DB255 /* ReserveSpotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveSpotController.h; sourceTree = "<group>"; };
 		7EAA3F0F1859A3A2002DB255 /* ReserveSpotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveSpotController.m; sourceTree = "<group>"; };
 		7EAA3F101859A3A3002DB255 /* ReserveSpotController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveSpotController.xib; sourceTree = "<group>"; };
+		7EDB25C71905C3A6004868FC /* PQUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQUser.h; sourceTree = "<group>"; };
+		7EDB25C81905C3A6004868FC /* PQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQUser.m; sourceTree = "<group>"; };
+		7EDB25CA1905D3FE004868FC /* PQSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PQSignUpViewController.h; sourceTree = "<group>"; };
+		7EDB25CB1905D3FE004868FC /* PQSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PQSignUpViewController.m; sourceTree = "<group>"; };
+		7EDB25CC1905D3FE004868FC /* PQSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PQSignUpViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +134,7 @@
 				7EAA3EA8185978EB002DB255 /* CoreGraphics.framework in Frameworks */,
 				7EAA3EAA185978EB002DB255 /* UIKit.framework in Frameworks */,
 				7EAA3EA6185978EB002DB255 /* Foundation.framework in Frameworks */,
+				7E7BA21D190762AC0014F06F /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +151,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E6A3C7818C81B1A00BBCC7D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7E6A3C7D18C81F6E00BBCC7D /* Checkmark.png */,
+				7EAA3EE818597CCA002DB255 /* DJ.jpg */,
+				7E563F3F185FFF1C009FDE8D /* location.png */,
+				7E4CE7E01861083F0089E227 /* Maria.jpg */,
+				7E4CE7E11861083F0089E227 /* Mckenzie.jpg */,
+				7E4CE7E21861083F0089E227 /* Ben.jpg */,
+				7E4CE7E31861083F0089E227 /* Fui.jpg */,
+				7E4CE7DC186104470089E227 /* Justin.jpg */,
+				7E4CE7DD186104470089E227 /* Yen.jpg */,
+				7E563F3D185FD7AA009FDE8D /* icon-garage1.png */,
+				7E563F37185FD689009FDE8D /* texture1.jpg */,
+				7E442BE2185D5E2000C516EE /* lightGreyTexture.jpg */,
+				7E442BE0185D543B00C516EE /* Driveway.jpg */,
+				7EAA3F0C1859A0AC002DB255 /* House.png */,
+				7E442BE6185D677500C516EE /* parq_logo_2.png */,
+				7E442BE4185D64AB00C516EE /* parq_logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		7E6A3C7918C81B6500BBCC7D /* Reserve Spot */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3F0E1859A3A2002DB255 /* ReserveSpotController.h */,
+				7EAA3F0F1859A3A2002DB255 /* ReserveSpotController.m */,
+				7EAA3F101859A3A3002DB255 /* ReserveSpotController.xib */,
+				7E6A3C7318C81AFE00BBCC7D /* ReserveConfirmationPage.h */,
+				7E6A3C7418C81AFE00BBCC7D /* ReserveConfirmationPage.m */,
+				7E6A3C7518C81AFE00BBCC7D /* ReserveConfirmationPage.xib */,
+			);
+			name = "Reserve Spot";
+			sourceTree = "<group>";
+		};
+		7E6A3C7A18C81BA000BBCC7D /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3EDB18597A50002DB255 /* MapViewController.h */,
+				7EAA3EDC18597A50002DB255 /* MapViewController.m */,
+				7EAA3EDD18597A50002DB255 /* MapViewController.xib */,
+				7E42D4AA1866A308003376DB /* SearchViewControllerNew.h */,
+				7E42D4AB1866A308003376DB /* SearchViewControllerNew.m */,
+				7E42D4AC1866A308003376DB /* SearchViewControllerNew.xib */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		7E6A3C7B18C81BF100BBCC7D /* Add Spot */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA3ED4185979D6002DB255 /* AddParkingSpotController.h */,
+				7EAA3ED5185979D6002DB255 /* AddParkingSpotController.m */,
+				7EAA3ED6185979D6002DB255 /* AddParkingSpotController.xib */,
+			);
+			name = "Add Spot";
+			sourceTree = "<group>";
+		};
+		7E6A3C7C18C81C0600BBCC7D /* Map Pin */ = {
+			isa = PBXGroup;
+			children = (
+				7EDB25C71905C3A6004868FC /* PQUser.h */,
+				7EDB25C81905C3A6004868FC /* PQUser.m */,
+				7EAA3ED918597A3E002DB255 /* MapPin.h */,
+				7EAA3EDA18597A50002DB255 /* MapPin.m */,
+			);
+			name = "Map Pin";
+			sourceTree = "<group>";
+		};
 		7EAA3E99185978EA002DB255 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +243,7 @@
 		7EAA3EA4185978EB002DB255 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BA21C190762AC0014F06F /* FacebookSDK.framework */,
 				7EAA3EE318597ABE002DB255 /* MapKit.framework */,
 				7EAA3EE118597AB1002DB255 /* CoreLocation.framework */,
 				7EAA3EA5185978EB002DB255 /* Foundation.framework */,
@@ -168,38 +257,15 @@
 		7EAA3EAB185978EB002DB255 /* parqV1 */ = {
 			isa = PBXGroup;
 			children = (
-				7E563F3F185FFF1C009FDE8D /* location.png */,
-				7E4CE7E01861083F0089E227 /* Maria.jpg */,
-				7E4CE7E11861083F0089E227 /* Mckenzie.jpg */,
-				7E4CE7E21861083F0089E227 /* Ben.jpg */,
-				7E4CE7E31861083F0089E227 /* Fui.jpg */,
-				7E4CE7DC186104470089E227 /* Justin.jpg */,
-				7E4CE7DD186104470089E227 /* Yen.jpg */,
-				7E563F3D185FD7AA009FDE8D /* icon-garage1.png */,
-				7E563F37185FD689009FDE8D /* texture1.jpg */,
-				7E442BE2185D5E2000C516EE /* lightGreyTexture.jpg */,
-				7E442BE0185D543B00C516EE /* Driveway.jpg */,
-				7EAA3F0C1859A0AC002DB255 /* House.png */,
-				7E442BE6185D677500C516EE /* parq_logo_2.png */,
-				7E442BE4185D64AB00C516EE /* parq_logo.png */,
+				7E6A3C7818C81B1A00BBCC7D /* images */,
 				7EAA3F0718599B6C002DB255 /* AppDelegate.h */,
 				7EAA3F0818599B6C002DB255 /* AppDelegate.m */,
-				7EAA3EDB18597A50002DB255 /* MapViewController.h */,
-				7EAA3EDC18597A50002DB255 /* MapViewController.m */,
-				7EAA3EDD18597A50002DB255 /* MapViewController.xib */,
-				7E42D4AA1866A308003376DB /* SearchViewControllerNew.h */,
-				7E42D4AB1866A308003376DB /* SearchViewControllerNew.m */,
-				7E42D4AC1866A308003376DB /* SearchViewControllerNew.xib */,
-				7EAA3F0E1859A3A2002DB255 /* ReserveSpotController.h */,
-				7EAA3F0F1859A3A2002DB255 /* ReserveSpotController.m */,
-				7EAA3F101859A3A3002DB255 /* ReserveSpotController.xib */,
-				7EAA3ED918597A3E002DB255 /* MapPin.h */,
-				7EAA3EDA18597A50002DB255 /* MapPin.m */,
-				7EAA3ED4185979D6002DB255 /* AddParkingSpotController.h */,
-				7EAA3ED5185979D6002DB255 /* AddParkingSpotController.m */,
-				7EAA3ED6185979D6002DB255 /* AddParkingSpotController.xib */,
+				7EDB25CF1905D40F004868FC /* Sign Up */,
+				7E6A3C7A18C81BA000BBCC7D /* Main Screen */,
+				7E6A3C7918C81B6500BBCC7D /* Reserve Spot */,
+				7E6A3C7B18C81BF100BBCC7D /* Add Spot */,
+				7E6A3C7C18C81C0600BBCC7D /* Map Pin */,
 				7EAA3EB7185978EB002DB255 /* Images.xcassets */,
-				7EAA3EE818597CCA002DB255 /* DJ.jpg */,
 				7EAA3EAC185978EB002DB255 /* Supporting Files */,
 			);
 			path = parqV1;
@@ -232,6 +298,16 @@
 				7EAA3EC7185978EB002DB255 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EDB25CF1905D40F004868FC /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				7EDB25CA1905D3FE004868FC /* PQSignUpViewController.h */,
+				7EDB25CB1905D3FE004868FC /* PQSignUpViewController.m */,
+				7EDB25CC1905D3FE004868FC /* PQSignUpViewController.xib */,
+			);
+			name = "Sign Up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +358,7 @@
 				ORGANIZATIONNAME = "Duncan Riefler";
 				TargetAttributes = {
 					7EAA3EA1185978EB002DB255 = {
-						DevelopmentTeam = 7FX28RKSGV;
+						DevelopmentTeam = 4MZU8943NK;
 					};
 					7EAA3EBC185978EB002DB255 = {
 						TestTargetID = 7EAA3EA1185978EB002DB255;
@@ -313,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAA3F121859A3A3002DB255 /* ReserveSpotController.xib in Resources */,
+				7EDB25CE1905D3FE004868FC /* PQSignUpViewController.xib in Resources */,
+				7E6A3C7E18C81F6E00BBCC7D /* Checkmark.png in Resources */,
 				7E563F3E185FD7AA009FDE8D /* icon-garage1.png in Resources */,
 				7E4CE7E71861083F0089E227 /* Fui.jpg in Resources */,
 				7E4CE7DF186104470089E227 /* Yen.jpg in Resources */,
@@ -325,6 +403,7 @@
 				7E4CE7E51861083F0089E227 /* Mckenzie.jpg in Resources */,
 				7EAA3EB0185978EB002DB255 /* InfoPlist.strings in Resources */,
 				7EAA3EB8185978EB002DB255 /* Images.xcassets in Resources */,
+				7E6A3C7718C81AFE00BBCC7D /* ReserveConfirmationPage.xib in Resources */,
 				7E442BE1185D543B00C516EE /* Driveway.jpg in Resources */,
 				7EAA3F0D1859A0AC002DB255 /* House.png in Resources */,
 				7E442BE5185D64AB00C516EE /* parq_logo.png in Resources */,
@@ -351,13 +430,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6A3C7618C81AFE00BBCC7D /* ReserveConfirmationPage.m in Sources */,
 				7EAA3F111859A3A3002DB255 /* ReserveSpotController.m in Sources */,
 				7EAA3EDE18597A50002DB255 /* MapPin.m in Sources */,
 				7EAA3EDF18597A50002DB255 /* MapViewController.m in Sources */,
 				7E42D4AD1866A308003376DB /* SearchViewControllerNew.m in Sources */,
 				7EAA3ED7185979D6002DB255 /* AddParkingSpotController.m in Sources */,
 				7EAA3EB2185978EB002DB255 /* main.m in Sources */,
+				7EDB25C91905C3A6004868FC /* PQUser.m in Sources */,
 				7EAA3F0918599B6C002DB255 /* AppDelegate.m in Sources */,
+				7EDB25CD1905D3FE004868FC /* PQSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,11 +559,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
 				INFOPLIST_FILE = "parqV1/parqV1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,11 +581,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "parqV1/parqV1-Prefix.pch";
 				INFOPLIST_FILE = "parqV1/parqV1-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

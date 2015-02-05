@@ -9,6 +9,7 @@
 #define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.200.152.228:3000/reserve"] //2
 
 #import "ReserveSpotController.h"
+#import "ReserveConfirmationPage.h"
 
 @interface ReserveSpotController ()
 
@@ -45,6 +46,8 @@
 }
 
 - (IBAction)reserveButtonPressed:(id)sender {
+    
+    // Send data to server
     NSDictionary* info = [[NSDictionary alloc] initWithObjectsAndKeys:
                           [_user objectForKey:@"UUID"],@"id",
                           nil];
@@ -70,6 +73,10 @@
     else if (error) {
         NSLog(@"%@", [error localizedDescription]);
     }
+    // Load confirmation page
+    ReserveConfirmationPage *rcp = [[ReserveConfirmationPage alloc] initWithNibName:@"ReserveConfirmationPage" bundle:nil];
+    [[self navigationController] pushViewController:rcp animated:YES];
+    
 }
 
 - (void)viewDidLoad

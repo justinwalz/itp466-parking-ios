@@ -7,7 +7,7 @@
 //
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
-#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://54.200.152.228:3000/spots"] //2
+#define kLatestParkingSpotsURL [NSURL URLWithString:@"http://parq-backend.herokuapp.com"] //2
 
 
 #import "MapViewController.h"
